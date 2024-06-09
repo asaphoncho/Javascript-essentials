@@ -19,8 +19,9 @@ function displayHREmployees(){
     const hrEmployeesDisplay = hrEmployees.map((employee, index) => `<p>${employee.id}: ${employee.name} : ${employee.name} - ${employee.department} - ${employee.salary}</p>`)
     document.getElementById('employeesDetails').innerHTML = hrEmployeesDisplay
 }
-function findEmployeeById(employeeId) {
-    const foundEmployee = employees.find(employee => employee.id === employeeId);
+function findEmployeeById(){
+    const employeeID = parseFloat(document.getElementById('employee-id').value)
+    const foundEmployee = employees.find(employee => employee.id == `${employeeID}`);
     if (foundEmployee) {
     document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: ${foundEmployee.name}: ${foundEmployee.name} - ${foundEmployee.department} - $${foundEmployee.salary}</p>`;
     }
